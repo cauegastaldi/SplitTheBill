@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">SplitTheBill</string>
+    <string name="name">Nome</string>
+    <string name="moneyPaid">Dinheiro Pago</string>
 </resources>
