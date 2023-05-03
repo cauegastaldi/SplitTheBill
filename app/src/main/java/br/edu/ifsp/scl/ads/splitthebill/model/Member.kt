@@ -1,11 +1,16 @@
 package br.edu.ifsp.scl.ads.splitthebill.model
 
 import android.os.Parcelable
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
+@Entity
 class Member(
-    val name: String, var moneyPaid: Double = 0.0, var purchasedItems: String = ""
+    @PrimaryKey(autoGenerate = false) val name: String,
+    var moneyPaid: Double,
+    var purchasedItems: String
 ): Parcelable {
 
     fun getMoneyToReceive(members: MutableList<Member>): Double {
