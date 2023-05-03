@@ -13,13 +13,30 @@ class MemberController(private val mainActivity: MainActivity) {
         mainActivity, MemberDaoRoom::class.java, MemberDaoRoom.CONTACT_DATABASE_FILE
     ).build().getMemberDao()
 
-    fun insertMember(member: Member) = memberDaoImpl.createMember(member)
-    fun getMember(name: String) = memberDaoImpl.retrieveMember(name)
-    fun getMembers() {
-        thread {
-            mainActivity.updateMembersList(memberDaoImpl.retrieveMembers())
-        }
+    fun insertMember(member: Member) {
+        Thread {
+            memberDaoImpl.createMember(member)
+        }.start()
     }
-    fun editMember(member: Member) = memberDaoImpl.updateMember(member)
-    fun removeMember(member: Member) = memberDaoImpl.deleteMember(member)
+    fun getMember(name: String) {
+        Thread {
+            memberDaoImpl.retrieveMember(name)
+        }.start()
+    }
+
+    fun getMembers() {
+        Thread {
+            mainActivity.updateMembersList(memberDaoImpl.retrieveMembers())
+        }.start()
+    }
+    fun editMember(member: Member) {
+        Thread {
+            memberDaoImpl.updateMember(member)
+        }.start()
+    }
+    fun removeMember(member: Member) {
+        Thread {
+            memberDaoImpl.deleteMember(member)
+        }.start()
+    }
 }
