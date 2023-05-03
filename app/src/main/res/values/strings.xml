@@ -4,4 +4,7 @@
     <string name="moneyPaid">Dinheiro Pago</string>
     <string name="add_member">Adicionar Integrante</string>
     <string name="split_bill">Rachar Conta</string>
+    <string name="member_info">Informações do Integrante</string>
+    <string name="purchasedItems">Itens comprados</string>
+    <string name="save">Salvar</string>
 </resources>
