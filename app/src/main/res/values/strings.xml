@@ -7,4 +7,6 @@
     <string name="member_info">Informações do Integrante</string>
     <string name="purchasedItems">Itens comprados</string>
     <string name="save">Salvar</string>
+    <string name="remove_member">Remover Membro</string>
+    <string name="edit_member">Editar Membro</string>
 </resources>

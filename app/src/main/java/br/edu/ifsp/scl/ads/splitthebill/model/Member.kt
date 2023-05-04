@@ -1,6 +1,7 @@
 package br.edu.ifsp.scl.ads.splitthebill.model
 
 import android.os.Parcelable
+import androidx.annotation.NonNull
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import kotlinx.parcelize.Parcelize
@@ -8,7 +9,8 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 @Entity
 class Member(
-    @PrimaryKey(autoGenerate = false) val name: String,
+    @PrimaryKey(autoGenerate = true) val id: Int?,
+    @NonNull val name: String,
     var moneyPaid: Double,
     var purchasedItems: String
 ): Parcelable {
