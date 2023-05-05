@@ -5,6 +5,7 @@ import br.edu.ifsp.scl.ads.splitthebill.model.Member
 import br.edu.ifsp.scl.ads.splitthebill.model.MemberDao
 import br.edu.ifsp.scl.ads.splitthebill.model.MemberDaoRoom
 import br.edu.ifsp.scl.ads.splitthebill.view.MainActivity
+import kotlinx.coroutines.Runnable
 import kotlin.concurrent.thread
 
 class MemberController(private val mainActivity: MainActivity) {
@@ -14,10 +15,11 @@ class MemberController(private val mainActivity: MainActivity) {
     ).build().getMemberDao()
 
     fun insertMember(member: Member) {
-        Thread {
-            memberDaoImpl.createMember(member)
-        }.start()
+        val thread = Thread { memberDaoImpl.createMember(member) }
+        thread.start()
+        thread.join()
     }
+
     fun getMember(name: String) {
         Thread {
             memberDaoImpl.retrieveMember(name)
@@ -26,14 +28,19 @@ class MemberController(private val mainActivity: MainActivity) {
 
     fun getMembers() {
         Thread {
-            mainActivity.updateMembersList(memberDaoImpl.retrieveMembers())
+            val members = memberDaoImpl.retrieveMembers()
+            mainActivity.runOnUiThread(Runnable {
+                mainActivity.updateMembersList(members)
+            })
         }.start()
     }
+
     fun editMember(member: Member) {
         Thread {
             memberDaoImpl.updateMember(member)
         }.start()
     }
+
     fun removeMember(member: Member) {
         Thread {
             memberDaoImpl.deleteMember(member)

@@ -17,6 +17,8 @@ import br.edu.ifsp.scl.ads.splitthebill.adapter.MemberAdapter
 import br.edu.ifsp.scl.ads.splitthebill.controller.MemberController
 import br.edu.ifsp.scl.ads.splitthebill.databinding.ActivityMainBinding
 import br.edu.ifsp.scl.ads.splitthebill.model.Member
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 
 class MainActivity : BaseActivity() {
 
@@ -60,8 +62,8 @@ class MainActivity : BaseActivity() {
                         memberController.editMember(_member)
                         Toast.makeText(this, "Membro editado com sucesso!", Toast.LENGTH_SHORT).show()
                     } else {
-                        memberList.add(_member)
                         memberController.insertMember(_member)
+                        memberController.getMembers()
                         Toast.makeText(this, "Membro adicionado com sucesso!", Toast.LENGTH_SHORT).show()
                     }
                     memberAdapter.notifyDataSetChanged()
