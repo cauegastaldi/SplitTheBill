@@ -103,6 +103,14 @@ class MainActivity : BaseActivity() {
                 marl.launch(memberIntent)
                 true
             }
+            R.id.splitBillMi -> {
+                val bundle = Bundle()
+                bundle.putParcelableArrayList(BUNDLE_LIST_MEMBER, ArrayList<Member>(memberList))
+                val splitTheBillIntent = Intent(this, SplitBillActivity::class.java)
+                splitTheBillIntent.putExtras(bundle)
+                startActivity(splitTheBillIntent)
+                true
+            }
             else -> false
         }
     }

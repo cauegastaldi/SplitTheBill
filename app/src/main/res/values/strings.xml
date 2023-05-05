@@ -9,4 +9,6 @@
     <string name="save">Salvar</string>
     <string name="remove_member">Remover Membro</string>
     <string name="edit_member">Editar Membro</string>
+    <string name="moneyToPay">Dinheiro a pagar: %.2f R$</string>
+    <string name="moneyToReceive">Dinheiro a receber: %.2f R$</string>
 </resources>

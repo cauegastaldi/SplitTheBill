@@ -15,6 +15,9 @@
             android:name=".view.MemberActivity"
             android:exported="false" />
         <activity
+            android:name=".view.SplitBillActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.MainActivity"
             android:exported="true">
             <intent-filter>
