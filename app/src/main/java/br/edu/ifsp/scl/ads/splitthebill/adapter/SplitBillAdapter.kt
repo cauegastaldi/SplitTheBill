@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
-import android.widget.EditText
 import android.widget.TextView
 import br.edu.ifsp.scl.ads.splitthebill.R
 import br.edu.ifsp.scl.ads.splitthebill.databinding.TileSplitBillBinding
@@ -37,8 +36,8 @@ class SplitBillAdapter(
 
         with (tileSplitBillView.tag as TileSplitBillViewHolder) {
             nameTv.text = member.name
-            moneyToPayTv.text = context.getString(R.string.moneyToPay, member.getMoneyToPay(memberList))
-            moneyToReceiveTv.text = context.getString(R.string.moneyToReceive, member.getMoneyToReceive(memberList))
+            moneyToPayTv.text = context.getString(R.string.money_to_pay, member.getMoneyToPay(memberList))
+            moneyToReceiveTv.text = context.getString(R.string.money_to_receive, member.getMoneyToReceive(memberList))
         }
 
         return tileSplitBillView

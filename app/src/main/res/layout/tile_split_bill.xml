@@ -16,12 +16,12 @@
         android:id="@+id/moneyToReceiveTv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/moneyToReceive" />
+        android:text="@string/money_to_receive" />
 
     <TextView
         android:id="@+id/moneyToPayTv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/moneyToPay" />
+        android:text="@string/money_to_pay" />
 
 </LinearLayout>
