@@ -24,7 +24,7 @@ class Member(
 
         if (moneyPaid < moneyPerMember)
             return 0.0
-        return totalPaid - moneyPerMember
+        return moneyPaid - moneyPerMember
     }
 
     fun getMoneyToPay(members: MutableList<Member>): Double {
@@ -36,6 +36,6 @@ class Member(
 
         if (moneyPaid > moneyPerMember)
             return 0.0
-        return totalPaid - moneyPaid
+        return moneyPerMember - moneyPaid
     }
 }
