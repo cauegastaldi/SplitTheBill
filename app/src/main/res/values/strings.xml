@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">SplitTheBill</string>
     <string name="name">Nome</string>
-    <string name="money_paid">Dinheiro Pago</string>
+    <string name="money_paid_tile_member">Dinheiro Pago: %.2f R$</string>
+    <string name="money_paid_activity">Dinheiro Pago</string>
     <string name="add_member">Adicionar Integrante</string>
     <string name="split_bill">Rachar Conta</string>
     <string name="member_info">Informações do Integrante</string>

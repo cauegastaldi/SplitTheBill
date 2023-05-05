@@ -36,7 +36,7 @@ class MemberAdapter(
 
         with (tileMemberView.tag as TileMemberViewHolder) {
             nameTv.text = member.name
-            moneyPaidTv.text = member.moneyPaid.toString()
+            moneyPaidTv.text = context.getString(R.string.money_paid_tile_member, member.moneyPaid)
         }
 
         return tileMemberView
