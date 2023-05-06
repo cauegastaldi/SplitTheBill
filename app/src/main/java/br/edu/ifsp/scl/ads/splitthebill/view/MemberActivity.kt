@@ -53,7 +53,7 @@ class MemberActivity: BaseActivity() {
 
             if (formErrors.isEmpty()) {
                 with (amb) {
-                    val name = nameEt.text.toString()
+                    val name = nameEt.text.toString().trim()
                     val moneyPaid = if (moneyPaidEt.text.toString().toDoubleOrNull() != null) {
                         moneyPaidEt.text.toString().toDouble()
                     } else {
