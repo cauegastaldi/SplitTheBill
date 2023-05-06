@@ -36,7 +36,7 @@ class MemberActivity: BaseActivity() {
             }
             val viewMember = intent.getBooleanExtra(EXTRA_VIEW_MEMBER, false)
             with (amb) {
-                nameEt.isEnabled = !viewMember
+                nameEt.isEnabled = false
                 moneyPaidEt.isEnabled = !viewMember
                 purchasedItemsEt.isEnabled = !viewMember
                 saveBt.isVisible = !viewMember
