@@ -33,7 +33,7 @@ class MemberValidator {
         }
 
         private fun memberNameIsUnique(memberList: ArrayList<Member>, name: String): Boolean {
-            return memberList.firstOrNull { member -> member.name.lowercase() == name.lowercase() } == null
+            return memberList.firstOrNull { member -> member.name.lowercase() == name.trim().lowercase() } == null
         }
     }
 }
