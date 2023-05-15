@@ -20,18 +20,12 @@ class MemberController(private val mainActivity: MainActivity) {
         thread.join()
     }
 
-    fun getMember(name: String) {
-        Thread {
-            memberDaoImpl.retrieveMember(name)
-        }.start()
-    }
-
     fun getMembers() {
         Thread {
             val members = memberDaoImpl.retrieveMembers()
-            mainActivity.runOnUiThread(Runnable {
+            mainActivity.runOnUiThread {
                 mainActivity.updateMembersList(members)
-            })
+            }
         }.start()
     }
 
